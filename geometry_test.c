@@ -9,7 +9,7 @@
  * Requires http://check.sourceforge.net/
  *
  */
-
+#include <stdio.h>
 #include <stdlib.h>
 #include <check.h>
 
@@ -152,17 +152,13 @@ START_TEST(test_2d_area_triangle)
     coord_2d_t c;
 
 
-    a.x = 15;
-    a.y = 15;
-    b.x = 10;
-    b.y = 40;
-    c.x = 55;
-    c.y = 10;
-    float  my_area = coord_2d_area_triangle(&a, &b, &c);
-    float actual_area = 487.50;
-    
-    ck_assert(my_area == actual_area);
-
+    a.x = 0;
+    a.y = 0;
+    b.x = 0;
+    b.y = 0;
+    c.x = 0;
+    c.y = 0;
+    ck_assert(coord_2d_area_triangle(&a, &b, &c) == 0.0);
 }
 END_TEST
 
